@@ -1,0 +1,23 @@
+Generate an optimized Google News search query based on the given information to find relevant past events.
+
+---
+**Event Information**  
+- Asset: !<INPUT 1>!  
+- Date: !<INPUT 0>! 
+- Title: !<INPUT 2>! 
+- Content: !<INPUT 3>!  
+
+**User Query**  
+"!<INPUT 4>! "
+
+**Query Generation Guidelines**  
+1. Identify key terms from the title and content to construct a concise query.  
+2. Include {name} and relevant time-based keywords to find past similar events.  
+3. Ensure the query is structured to return relevant news articles.  
+
+**Example Output**  
+- `"Bitcoin price surge after U.S. presidential election"`  
+- `"Political events influencing Bitcoin price historically"`  
+- `"Past cases of Bitcoin price changes due to presidential election results"`
+
+**Final Google News Search Query:**  

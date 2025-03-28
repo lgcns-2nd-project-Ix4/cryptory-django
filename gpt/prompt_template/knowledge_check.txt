@@ -1,0 +1,24 @@
+Determine whether the following information is sufficient to provide a clear and factual answer to the user's query.
+
+---
+**Event Information**  
+- Asset: !<INPUT 1>! 
+- Date: !<INPUT 0>! 
+- Title: !<INPUT 2>!  
+- Content: !<INPUT 3>!  
+
+**User Query**  
+"!<INPUT 4>!"
+
+**Evaluation Criteria**  
+1. Is there a known historical precedent for a similar event?  
+2. Is there sufficient historical context available within GPT's knowledge?  
+3. Can the answer be generated based solely on reliable existing knowledge?  
+
+**Response Format**  
+- If GPT can answer without additional information: "YES"  
+- If more information is needed: "NO"  
+
+**Example Output**  
+- YES  
+- NO
