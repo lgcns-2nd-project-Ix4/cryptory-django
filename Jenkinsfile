@@ -15,6 +15,11 @@ pipeline {
         TASK_DEFINITION_NAME = 'task-definition-BE-django'
         CONTAINER_NAME = 'be-django-container'
         EXECUTION_ROLE_ARN = 'arn:aws:iam::050314037804:role/ecsTaskExecutionRole' 
+
+        // 빌드에 넘겨줄 환경 변수 값 
+        SERPAPI_KEY = credentials('SERPAPI_KEY')
+        OPENAI_API_KEY = credentials('OPENAI_API_KEY')
+        SECRET_KEY = credentials('DJANGO_OPENAI_API_KEY')
     }
 
     stages {
@@ -27,7 +32,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh """
-                    docker build -t $IMAGE_NAME .
+                    docker build \
+                        --build-arg OPENAI_API_KEY=$OPENAI_API_KEY \
+                        --build-arg SERPAPI_KEY=$SERPAPI_KEY \
+                        --build-arg SECRET_KEY=$SECRET_KEY \
+                        -t $IMAGE_NAME .
                     docker tag $IMAGE_NAME:latest $ECR_REPO:latest
                 """
             }
