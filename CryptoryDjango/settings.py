@@ -23,6 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', None)
 
+EUREKA_URL = os.environ.get('EUREKA_URL', None)  # 예: 'http://localhost:8761/eureka/apps/'
+
+SERVICE_NAME = "AI-SERVICE"
+
+# RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST', None)  # 예: 'localhost'
+# RABBITMQ_PORT = os.environ.get('RABBITMQ_PORT', None)  # 예: '5672'
+# RABBITMQ_USERNAME = os.environ.get('RABBITMQ_USERNAME', None)  # 예: 'guest'
+# RABBITMQ_PASSWORD = os.environ.get('RABBITMQ_PASSWORD', None)  # 예: 'guest'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

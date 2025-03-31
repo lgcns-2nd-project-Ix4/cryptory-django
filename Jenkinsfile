@@ -90,6 +90,24 @@ pipeline {
                                                     "containerPort": 8000,
                                                     "protocol": "tcp"
                                                 }
+                                            ],
+                                            "environment": [
+                                                {
+                                                    "name": "SECRET_KEY",
+                                                    "value": "${SECRET_KEY}"
+                                                },
+                                                {
+                                                    "name": "OPENAI_API_KEY",
+                                                    "value": "${OPENAI_API_KEY}"
+                                                },
+                                                {
+                                                    "name": "SERPAPI_KEY",
+                                                    "value": "${SERPAPI_KEY}"
+                                                },
+                                                {
+                                                    "name": "EUREKA_URL",
+                                                    "value": "${EUREKA_URL}"
+                                                }
                                             ]
                                         }
                                     ]' \
